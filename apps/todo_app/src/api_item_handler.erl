@@ -4,8 +4,6 @@
 
 init(Req, State) ->
   #{method := Method} = Req,
-  erlang:display("METHOD"),
-  erlang:display(Method),
   case Method of 
 		<<"GET">> -> get(Req, State);
 		<<"PATCH">> -> patch(Req, State);

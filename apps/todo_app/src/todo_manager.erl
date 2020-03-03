@@ -6,7 +6,7 @@
 
 init() -> 
   mnesia:start(),
-  Res = mnesia:create_table(todo,[{attributes,record_info(fields,todo)}]),
+  Res = mnesia:create_table(todo,[{attributes,record_info(fields,todo)},{disc_copies, nodes()}]),
   erlang:display(Res).
 write(Todo) ->
     true = uuid:is_valid(Todo#todo.id),
